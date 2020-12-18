@@ -9,7 +9,7 @@ y = df['Species']
 st.title('Iris Flower Prediction')
 st.write('*This app predicts the type of Iris flower based on the sepal length and width, and petal length and width.*')
 
-image= Image.open(r"C:\Users\ADEGBITE BOLA\Pictures\iris.png")
+image= Image.open("iris.png")
 st.sidebar.image(image, caption= 'Iris Flowers', width=300 )
 st.sidebar.text('Please choose:')
 sepal_length= st.sidebar.slider('Sepal Length (in cm)', 4.3, 7.9, 5.1)
@@ -37,8 +37,8 @@ st.subheader('Prediction')
 for val in predict:
     i=val
 st.success('The flower is {}'. format(str(i)))
-name=i.split('-')[1].lower()
-st.image(Image.open(r"C:\Users\ADEGBITE BOLA\Pictures\iris-{}.png".format(name)), width=210)
+name=i.lower()
+st.image(Image.open("{}.png".format(name)), width=210)
 
 
 
